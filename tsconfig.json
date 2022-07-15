@@ -1,14 +1,36 @@
 {
   "compilerOptions": {
-    "declaration": true,
-    "importHelpers": true,
-    "module": "commonjs",
-    "outDir": "dist",
-    "rootDir": "src",
-    "strict": true,
-    "target": "es2019"
+    "incremental": true,
+    "outDir": "./dist",
+    "baseUrl": ".",
+    "moduleResolution": "Node",
+    "module": "CommonJS",
+    "target": "ES2018",
+    "sourceMap": true,
+    "lib": [
+      "esnext"
+    ],
+    "esModuleInterop": true,
+    "alwaysStrict": true,
+    "strictNullChecks": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": true,
+    "resolveJsonModule": true,
+    "paths": {
+      "@terracd/*": [
+        "packages/*/src/index.ts"
+      ]
+    }
   },
-  "include": [
-    "src/**/*"
-  ]
+  "references": [
+    {
+      "path": "packages/web"
+    },
+    {
+      "path": "packages/server"
+    }
+  ],
+  "exclude": ["node_modules", "dist", "*.d.ts"]
 }
